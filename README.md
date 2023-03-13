@@ -1,5 +1,8 @@
 In this post, we'll tackle one of the challenges of learning Hadoop, and that's finding data sets that are realistic yet large enough to show the advantages of distributed processing, but small enough for a single developer to tackle. The data set we're using in this tutorial is play-by-play baseball statistics, available free of charge from Retrosheet. The data is available by year, and includes detailed descriptions of games, plays, and players. This data is especially well-suited for our purposes, because a great deal of it is hand-encoded, so there are errors and malformed records that we need to handle.
 
+![2](https://user-images.githubusercontent.com/121477424/224619367-bcae8d2d-8c97-4ecd-9333-0aa07199759a.png)
+
+![3](https://user-images.githubusercontent.com/121477424/224619423-10bec163-3c93-4525-bb47-d2437006129f.png)
 
 Each year contains several types of files: Team files, Roster files, and Event files. Team files contain a listing of teams playing each year. Each team listing contains a 3-letter designator that is used to reference that team in all other files. Roster files contain a listing of players for each team, and are named with the 3-letter designator for each team and the year, followed by a .ROS extension. Event files are designated by a .EVA, .EVN, or .EVE extension, depending on whether they are for American League teams (.EVA), National League teams (.EVN), or for post-season games (.EVE). Each event file contains the home games for a single team for a single year. The filename consists of the year included and the 3-letter designator for the home team.
 
@@ -7,6 +10,9 @@ Each year contains several types of files: Team files, Roster files, and Event f
 
 **The data is available in gamedata directory.**
 
+![4](https://user-images.githubusercontent.com/121477424/224619476-000295af-b716-49d5-a0dc-6599d5d3c4b1.png)
+
+![5](https://user-images.githubusercontent.com/121477424/224619519-ad118148-d441-4185-befd-7d64cc3643b0.png)
 
 Since we have comma-delimited, newline-terminated records, we can use Pig’s built-in PigStorage class to get some more in-depth information about our data set. Let’s start with a few basic questions:
 
@@ -78,3 +84,8 @@ hive> select * from players;
 ```
 
 So finally all the tree question mentioned above on the top of this file have been answered. 
+
+
+
+![1](https://user-images.githubusercontent.com/121477424/224619580-d97c5f4d-0a1e-46f3-afbc-50b1940eca16.png)
+
